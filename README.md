@@ -23,7 +23,7 @@ $ starknet call \
     --inputs 2
 ```
 
-### Add demo tokens
+### Add demo tokens for the account, 1000 of each
 ```
 $ starknet invoke \
     --address ${AMM_ADDRESS} \
@@ -33,7 +33,7 @@ $ starknet invoke \
 ```
 
 ### Get account balance for token 1 and 2 (A and B) 
-Should start with 1000 for A and 0 for B
+Should start with 1000 for A and 1000 for B
 
 ```
 $ starknet call \
@@ -53,8 +53,8 @@ $ starknet invoke \
 ```
 
 ### Query for updated balance
-If you run `get_account_token_balance` again, you should now have 500 for token 1, and 333 for 2 (based on the formula)
-`b = (y * a) + (x + a) = (1000 * 500) + (1000 + 500)`
+If you run `get_account_token_balance` again, you should now have 500 for token 1, and 1000 + b for 2 (where b is based on the constant product formula)
+`b = (y * a) + (x + a)`
 
 ```
 $ starknet call \
