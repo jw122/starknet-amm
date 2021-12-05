@@ -52,8 +52,10 @@ $ starknet invoke \
     --inputs ${ACCOUNT_ID} 1 500
 ```
 
-### if you query get_account_token_balance again, you should now have 500 for 1, and 333 for 2 (based on the formula)
-b = (y * a) + (x + a) = (1000 * 500) + (1000 + 500)
+### Query for updated balance
+If you run `get_account_token_balance` again, you should now have 500 for token 1, and 333 for 2 (based on the formula)
+`b = (y * a) + (x + a) = (1000 * 500) + (1000 + 500)`
+
 ```
 $ starknet call \
     --address ${AMM_ADDRESS} \
